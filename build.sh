@@ -15,7 +15,7 @@ rm -rf pkg/*
 rm -rf $GOPATH/pkg/*
 mkdir -p bin/
 
-gox \
+env CGO_ENABLED=0 gox \
     -os="${XC_OS}" \
     -arch="${XC_ARCH}" \
     -output "pkg/{{.OS}}_{{.Arch}}/packer-{{.Dir}}" \
